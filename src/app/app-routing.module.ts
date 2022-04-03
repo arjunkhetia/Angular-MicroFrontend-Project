@@ -8,6 +8,20 @@ const routes: Routes = [
     component: HomeComponent,
     pathMatch: 'full',
   },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('about/AboutModule').then((module: any) => {
+        return module.AboutModule;
+      }),
+  },
+  {
+    path: 'contact',
+    loadChildren: () =>
+      import('contact/ContactModule').then((module: any) => {
+        return module.ContactModule;
+      }),
+  },
 ];
 
 @NgModule({
