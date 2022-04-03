@@ -109,6 +109,212 @@
           }
         }
       }
+    },
+    "about": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/about",
+      "sourceRoot": "projects/about/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/about",
+            "index": "projects/about/src/index.html",
+            "main": "projects/about/src/main.ts",
+            "polyfills": "projects/about/src/polyfills.ts",
+            "tsConfig": "projects/about/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/about/src/favicon.ico",
+              "projects/about/src/assets"
+            ],
+            "styles": [
+              "projects/about/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/about/src/environments/environment.ts",
+                  "with": "projects/about/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "about:build:production"
+            },
+            "development": {
+              "browserTarget": "about:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "about:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/about/src/test.ts",
+            "polyfills": "projects/about/src/polyfills.ts",
+            "tsConfig": "projects/about/tsconfig.spec.json",
+            "karmaConfig": "projects/about/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/about/src/favicon.ico",
+              "projects/about/src/assets"
+            ],
+            "styles": [
+              "projects/about/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "contact": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/contact",
+      "sourceRoot": "projects/contact/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/contact",
+            "index": "projects/contact/src/index.html",
+            "main": "projects/contact/src/main.ts",
+            "polyfills": "projects/contact/src/polyfills.ts",
+            "tsConfig": "projects/contact/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/contact/src/favicon.ico",
+              "projects/contact/src/assets"
+            ],
+            "styles": [
+              "projects/contact/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/contact/src/environments/environment.ts",
+                  "with": "projects/contact/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "contact:build:production"
+            },
+            "development": {
+              "browserTarget": "contact:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "contact:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/contact/src/test.ts",
+            "polyfills": "projects/contact/src/polyfills.ts",
+            "tsConfig": "projects/contact/tsconfig.spec.json",
+            "karmaConfig": "projects/contact/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/contact/src/favicon.ico",
+              "projects/contact/src/assets"
+            ],
+            "styles": [
+              "projects/contact/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "Angular-MicroFrontend-Project"
